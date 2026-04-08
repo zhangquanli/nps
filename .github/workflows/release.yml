@@ -25,7 +25,7 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
 
-      - name: Build and Push Nps Docker Image
+      - name: Build and Push nps Docker Image
         uses: docker/build-push-action@v5
         with:
           file: ./Dockerfile.nps
@@ -33,10 +33,10 @@ jobs:
           push: true
           tags: ${{env.NPS_DOCKER_IMAGE}}
 
-      - name: Build and Push Nps Docker Image
+      - name: Build and Push npc Docker Image
         uses: docker/build-push-action@v5
         with:
-          file: ./Dockerfile.nps
+          file: ./Dockerfile.npc
           context: .
           push: true
           tags: ${{env.NPC_DOCKER_IMAGE}}
